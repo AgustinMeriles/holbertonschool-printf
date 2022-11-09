@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- *  * get_op_func - Select the correct operator
- *   * Return: operator
- *    * @prin: chars digited by the user 
+ * get_op_func - Select the correct operator
+ * Return: operator
+ * @format: chars digited by the user
 **/
 int (*get_op_func(const char *format))(va_list arg)
 {
@@ -16,6 +16,7 @@ int (*get_op_func(const char *format))(va_list arg)
 		{NULL, NULL}
 	};
 	int i = 0;
+
 	while (ops[i].op != NULL)
 	{
 		if (*(ops[i].op) == *format)
