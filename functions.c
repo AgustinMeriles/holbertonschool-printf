@@ -11,7 +11,7 @@ int op_c(va_list c)
 	return(1);
 }
 
-/**
+/**i
  * op_s - adds a string
  * @s: the string
  * Return: count
@@ -19,15 +19,79 @@ int op_c(va_list c)
 
 int op_s(va_list s)
 {
-	int count;
-	char *f;
+	int counter = 0;
+	char *str;
 
-	f = va_arg(s, char *);
-	for (count = 0; f[count] != '\0'; count++)
+	str = va_arg(s, char *);
+	if (str == NULL)
+		str = "(null)";
+	while (str[counter] != '\0')
 	{
-		_putchar(f[count]);
-		count++;
-
+		_putchar(str[counter]);
+		counter++;
 	}
-	return (count);
+
+	return (counter);
+}
+int op_i(va_list i)
+{
+	int x, dc = 1, counter = 0;
+	unsigned int num;
+
+	x = va_arg(i, int);
+
+	if (x < 0)
+	{
+		counter += _putchar('-');
+		num = x * -1;
+	}
+
+	else
+	{
+		num = x;
+	}
+
+	while (num / dc > 9)
+		dc = dc * 10;
+
+	while (dc != 0)
+	{
+		counter += _putchar((num / dc) + '0');
+		num = num % dc;
+		dc = dc / 10;
+	}
+	return (counter);
+}
+/*
+* op_d - function that prints decimal
+*
+*
+*/
+int op_d(va_list d)
+{
+	int x, dc = 1, counter = 0;
+	unsigned int num;
+
+	x = va_arg(d, int);
+
+	if (x < 0)
+	{
+		counter += _putchar('-');
+		num = x * -1;
+	}
+	else
+	{
+		num = x;
+	}
+
+	while (num / dc > 9)
+		dc = dc * 10;
+
+	while (dc != 0)
+	{
+		counter += _putchar((num / dc) + '0');
+		num = num % dc;
+		dc = dc / 10;
+	}
+	return (counter);
 }
