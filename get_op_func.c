@@ -6,9 +6,11 @@
  *   * Return: operator
  *    * @prin: chars digited by the user 
 **/
-int (*get_op_func(const char *prin))(va_list arg)
+int (*get_op_func(const char *format))(va_list arg)
 {
 	op_t ops[] = {
+		{"d", op_i},
+		{"i", op_d},
 		{"s", op_s},
 		{"c", op_c},
 		{NULL, NULL}
@@ -16,8 +18,8 @@ int (*get_op_func(const char *prin))(va_list arg)
 	int i = 0;
 	while (ops[i].op != NULL)
 	{
-		if (*(ops[i].op) == *prin)
-			break;
+		if (*(ops[i].op) == *format)
+		break;
 
 		i++;
 	}
