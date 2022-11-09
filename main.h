@@ -8,9 +8,10 @@
 #include <stddef.h>
 #include <stdlib.h>
 /**
- *
- *
- */
+ *struct op - Struct used to print different types.
+ *@op: Data type to print.
+ *@f: Function to print;
+ **/
 typedef struct op
 {
 	char *op;
