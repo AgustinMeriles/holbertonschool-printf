@@ -8,10 +8,10 @@
 int op_c(va_list c)
 {
 	_putchar(va_arg(c, int));
-	return(1);
+	return (1);
 }
 
-/**i
+/**
  * op_s - adds a string
  * @s: the string
  * Return: count
@@ -33,6 +33,11 @@ int op_s(va_list s)
 
 	return (counter);
 }
+/**
+ * op_i - add a int
+ * @i: int
+ * Return: counter
+ */
 int op_i(va_list i)
 {
 	int x, dc = 1, counter = 0;
@@ -62,11 +67,11 @@ int op_i(va_list i)
 	}
 	return (counter);
 }
-/*
-* op_d - function that prints decimal
-*
-*
-*/
+/**
+ * op_d - function that prints a int
+ * @d: int
+ * Return: counter
+ */
 int op_d(va_list d)
 {
 	int x, dc = 1, counter = 0;
