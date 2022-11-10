@@ -9,7 +9,6 @@ Working team:
 - [_printf](#_printf)
 - [Dependencies](#dependencies)
 - [Usage](#usage)
-- [Flowchart](#flowchart)
 
 ### _printf
 Formatted version of the ````printf```` C command for [Holberton School] (https://holbertonschool.uy) being part of [holbertonschool-printf](https://github.com/AgustinMeriles/holbertonschool-printf).
