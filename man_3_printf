@@ -1,0 +1,42 @@
+.\" _printf manual.
+.TH _printf               Linux programmer's Manual               _printf
+.SH NAME
+_printf \- produces a formated output to a strandard output.
+.SH SYPNOSIS
+#include "main.h"
+
+int _printf(const char *format, ...)
+.SH Description
+This function produces output according to a format and writes under the control the output of a format string that specifies how subsequent arguments are converted for output.
+
+.SH Conversion specifers
+%s This argument expects to be a pointer to an array of characters (pointer to a string).
+.TP
+%d This argument is converted to signed decimal.
+.TP
+%c This argument is converted to char.
+.TP
+%% This argument prints only one "%".
+.TP
+%i, %d The int argument is converted to signed decimal.
+.TP
+No other argument will do a specific conversion.
+.SH Return VALUE
+If the function is executed successfully, it will return the number of characters printed, else return -1.
+.SH Examples
+To print an int:
+#include "main.h"
+int a = 1;
+.TP
+_printf("%d", a);
+.TP
+To print a string:
+.TP
+#include "main.h"
+.TP
+char *str = "Hello";
+.TP
+_printf(%s, str);
+
+.SH Authors
+This manpage was written by Agustin Meriles of cohort 19 from Holberton School.
